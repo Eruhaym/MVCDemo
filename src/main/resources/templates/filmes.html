@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Filmes</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid white;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+
+ <h1>Lista de Filmes</h1>
+<hr>
+<table>
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Genero</th>
+        <th>Diretor</th>
+        <th>Lancamento</th>
+    </tr>
+
+    </thead>
+
+    <tbody>
+
+    <tr th:each="filme:${filmes}">
+        <td th:text="${filme.nome}">Nome</td>
+        <td th:text="${filme.genero}">Genero</td>
+        <td th:text="${filme.diretor}">Diretor</td>
+        <td th:text="${filme.lancamento}">Lancamento</td>
+
+
+    </tr>
+
+    </tbody>
+</table>
+</body>
+</html>
